@@ -1,12 +1,39 @@
 import UIKit
 
-//ex2
+//ex3
 
-func countLessGreater(myArr: [Int], number: Int) {
-    
-    let lessNum = myArr.filter{$0 < number}.count
-    let greaterNum = myArr.filter{$0 > number}.count
-    print("There are ",lessNum ," numbers lower and ", greaterNum, " greater than 100")
-      
+// function with 2 guard statements
+func printIfPositiveInteger(number: String) {
+    guard let value = Int(number) , value > 0 else {
+        return
+    }
+    guard value > 0 else {
+        return
+    }
+    print(value)
 }
-countLessGreater(myArr: [110, 20, 100, 0, 200], number:100)
+
+printIfPositiveInteger(number: "abc")
+
+printIfPositiveInteger(number: "-10")
+
+printIfPositiveInteger(number: "10")
+
+
+//function with 1 compound guard statement.
+func printIfPositiveInteger2(number: String) {
+    guard let value = Int(number) , value > 0 else {
+        return
+    }
+    print(value)
+}
+
+printIfPositiveInteger2(number: "abc")
+
+printIfPositiveInteger2(number: "-10")
+
+printIfPositiveInteger2(number: "10")
+
+
+
+
