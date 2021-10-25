@@ -1,4 +1,4 @@
-Exercise 1:
+**Exercise 1:**
 
 Given the variable distance: 
 
@@ -18,7 +18,7 @@ Prints "Far" if distance exceeds 40.
 
  
 
-Exercise 2:
+**Exercise 2:**
 
 Write a function that receives 2 params, first is an array of integers and the second an integer number. The function should print the count of numbers inside the array that are lower or greater than the second param.
 
@@ -34,7 +34,7 @@ Result:
 
  
 
-Exercise 3:
+**Exercise 3:**
 
 Rewrite the following function using guard statements. You can use 2 guard statements or 1 compound guard statement. Actually, try both. :-) 
 
