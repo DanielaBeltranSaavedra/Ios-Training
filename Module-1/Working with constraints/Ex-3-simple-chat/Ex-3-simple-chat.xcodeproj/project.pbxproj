@@ -13,6 +13,8 @@
 		EB698EB92729DE8200B221C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB698EB72729DE8200B221C0 /* Main.storyboard */; };
 		EB698EBB2729DE8400B221C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB698EBA2729DE8400B221C0 /* Assets.xcassets */; };
 		EB698EBE2729DE8400B221C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB698EBC2729DE8400B221C0 /* LaunchScreen.storyboard */; };
+		EB698EC62729DFD700B221C0 /* messages.json in Resources */ = {isa = PBXBuildFile; fileRef = EB698EC52729DFD700B221C0 /* messages.json */; };
+		EB698ECA2729E65C00B221C0 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB698EC92729E65C00B221C0 /* message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EB698EBA2729DE8400B221C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB698EBD2729DE8400B221C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB698EBF2729DE8400B221C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB698EC52729DFD700B221C0 /* messages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = messages.json; path = ../../../../../../../Downloads/messages.json; sourceTree = "<group>"; };
+		EB698EC92729E65C00B221C0 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 		EB698EB02729DE8200B221C0 /* Ex-3-simple-chat */ = {
 			isa = PBXGroup;
 			children = (
+				EB698EC52729DFD700B221C0 /* messages.json */,
 				EB698EB12729DE8200B221C0 /* AppDelegate.swift */,
 				EB698EB32729DE8200B221C0 /* SceneDelegate.swift */,
 				EB698EB52729DE8200B221C0 /* ViewController.swift */,
+				EB698EC92729E65C00B221C0 /* message.swift */,
 				EB698EB72729DE8200B221C0 /* Main.storyboard */,
 				EB698EBA2729DE8400B221C0 /* Assets.xcassets */,
 				EB698EBC2729DE8400B221C0 /* LaunchScreen.storyboard */,
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB698EBE2729DE8400B221C0 /* LaunchScreen.storyboard in Resources */,
+				EB698EC62729DFD700B221C0 /* messages.json in Resources */,
 				EB698EBB2729DE8400B221C0 /* Assets.xcassets in Resources */,
 				EB698EB92729DE8200B221C0 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB698EB62729DE8200B221C0 /* ViewController.swift in Sources */,
+				EB698ECA2729E65C00B221C0 /* message.swift in Sources */,
 				EB698EB22729DE8200B221C0 /* AppDelegate.swift in Sources */,
 				EB698EB42729DE8200B221C0 /* SceneDelegate.swift in Sources */,
 			);
