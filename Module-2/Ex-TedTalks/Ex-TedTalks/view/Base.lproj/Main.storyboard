@@ -27,11 +27,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pnx-2x-xcp"/>
                                 </connections>
                             </searchBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="174" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-jj-k9Z">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="174" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-jj-k9Z" userLabel="contenedor">
                                 <rect key="frame" x="0.0" y="92.5" width="414" height="769.5"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0P5-TW-Fv0" userLabel="Search Table View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="133.5"/>
+                                    <tableView clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0P5-TW-Fv0" userLabel="Search Table View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="109" id="Zuc-v2-HKb">
@@ -45,10 +45,11 @@
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="RPL-sW-LcX"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="mCB-3u-Jub"/>
                                         </connections>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-Tf-L3c" userLabel="Talks Table View">
-                                        <rect key="frame" x="0.0" y="307.5" width="414" height="462"/>
+                                    <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-Tf-L3c" userLabel="Talks Table View">
+                                        <rect key="frame" x="0.0" y="231" width="414" height="538.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TalkCell" id="Dim-kb-OWB" customClass="TalkCell" customModule="Ex_TedTalks" customModuleProvider="target">
@@ -101,12 +102,16 @@
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="Wie-PP-lKc"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="oBW-H7-ivd"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="eSg-Tf-L3c" firstAttribute="height" secondItem="w0i-jj-k9Z" secondAttribute="height" multiplier="0.6" id="9AD-Zf-or6"/>
                                     <constraint firstItem="0P5-TW-Fv0" firstAttribute="width" secondItem="w0i-jj-k9Z" secondAttribute="width" id="QdN-z2-tF4"/>
                                     <constraint firstItem="eSg-Tf-L3c" firstAttribute="width" secondItem="w0i-jj-k9Z" secondAttribute="width" multiplier="1:1" id="mBP-Oh-gTx"/>
+                                    <constraint firstItem="eSg-Tf-L3c" firstAttribute="height" secondItem="w0i-jj-k9Z" secondAttribute="height" multiplier="1:1" constant="0.10000000000000001" id="pCs-qE-3Ko"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -123,6 +128,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="TalksTableView" destination="eSg-Tf-L3c" id="rek-LW-XHI"/>
                         <outlet property="searchBar" destination="f7b-Vg-loj" id="BGh-Ol-egk"/>
                         <outlet property="searchTable" destination="0P5-TW-Fv0" id="m8g-5w-1Ff"/>
                     </connections>
