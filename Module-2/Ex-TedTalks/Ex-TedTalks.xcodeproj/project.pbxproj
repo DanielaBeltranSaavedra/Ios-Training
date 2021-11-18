@@ -13,13 +13,12 @@
 		EB378DC72739BB6B00009E99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB378DC52739BB6B00009E99 /* Main.storyboard */; };
 		EB378DC92739BB6F00009E99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB378DC82739BB6F00009E99 /* Assets.xcassets */; };
 		EB378DCC2739BB6F00009E99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB378DCA2739BB6F00009E99 /* LaunchScreen.storyboard */; };
+		EB9A38B22745B4300072E081 /* TalkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A38B12745B4300072E081 /* TalkDetailViewController.swift */; };
 		EBAE2404273AD1CF0026B5AC /* TalkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2403273AD1CF0026B5AC /* TalkCell.swift */; };
 		EBAE2409273C5A0A0026B5AC /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2408273C5A0A0026B5AC /* TalkManager.swift */; };
 		EBAE240B273C5A1B0026B5AC /* Talk.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE240A273C5A1B0026B5AC /* Talk.swift */; };
 		EBAE240D273C5B380026B5AC /* tedTalks.json in Resources */ = {isa = PBXBuildFile; fileRef = EBAE240C273C5B380026B5AC /* tedTalks.json */; };
 		EBAE240F273C5BA20026B5AC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE240E273C5BA20026B5AC /* APIError.swift */; };
-		EBAE2413273C6A630026B5AC /* TableTalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2412273C6A630026B5AC /* TableTalksViewController.swift */; };
-		EBAE2415273C6A810026B5AC /* TableSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2414273C6A810026B5AC /* TableSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +30,12 @@
 		EB378DC82739BB6F00009E99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB378DCB2739BB6F00009E99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB378DCD2739BB6F00009E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9A38B12745B4300072E081 /* TalkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetailViewController.swift; sourceTree = "<group>"; };
 		EBAE2403273AD1CF0026B5AC /* TalkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCell.swift; sourceTree = "<group>"; };
 		EBAE2408273C5A0A0026B5AC /* TalkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkManager.swift; sourceTree = "<group>"; };
 		EBAE240A273C5A1B0026B5AC /* Talk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk.swift; sourceTree = "<group>"; };
 		EBAE240C273C5B380026B5AC /* tedTalks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tedTalks.json; sourceTree = "<group>"; };
 		EBAE240E273C5BA20026B5AC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		EBAE2412273C6A630026B5AC /* TableTalksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableTalksViewController.swift; sourceTree = "<group>"; };
-		EBAE2414273C6A810026B5AC /* TableSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				EB378DC32739BB6B00009E99 /* ViewController.swift */,
-				EBAE2412273C6A630026B5AC /* TableTalksViewController.swift */,
-				EBAE2414273C6A810026B5AC /* TableSearchViewController.swift */,
+				EB9A38B12745B4300072E081 /* TalkDetailViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -187,12 +184,11 @@
 				EB378DC42739BB6B00009E99 /* ViewController.swift in Sources */,
 				EBAE2404273AD1CF0026B5AC /* TalkCell.swift in Sources */,
 				EB378DC02739BB6B00009E99 /* AppDelegate.swift in Sources */,
-				EBAE2415273C6A810026B5AC /* TableSearchViewController.swift in Sources */,
 				EB378DC22739BB6B00009E99 /* SceneDelegate.swift in Sources */,
 				EBAE2409273C5A0A0026B5AC /* TalkManager.swift in Sources */,
 				EBAE240B273C5A1B0026B5AC /* Talk.swift in Sources */,
 				EBAE240F273C5BA20026B5AC /* APIError.swift in Sources */,
-				EBAE2413273C6A630026B5AC /* TableTalksViewController.swift in Sources */,
+				EB9A38B22745B4300072E081 /* TalkDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

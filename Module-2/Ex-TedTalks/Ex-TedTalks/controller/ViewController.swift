@@ -11,12 +11,13 @@ import WebKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var searchTable: UITableView!
-    
     @IBOutlet weak var TalksTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     var talks: [Talk] = []
     var filteredData: [Talk] = []
     var filteredTags: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TalksTableView.separatorStyle = .none
@@ -33,11 +34,11 @@ class ViewController: UIViewController {
         }
         filteredData = talks
         filteredTags = filteredData.flatMap({ $0.tags})
-        
     }
-    
 }
-extension ViewController: UITableViewDataSource{
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard tableView.tag == 1 else{
             return filteredData.count
@@ -48,48 +49,62 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard tableView.tag == 1 else{
             let cell = TalksTableView.dequeueReusableCell(withIdentifier: "TalkCell",for: indexPath) as!TalkCell
-            let videoUrl = "https://embed.ted.com/talks/majora_carter_s_tale_of_urban_renewal"
+            let videoUrl = filteredData[indexPath.row].url
             cell.video.load(URLRequest(url: URL(string: videoUrl)!))
-            cell.titleLabel.text = "Ken Robinson: Do schools kill creativity?"
-            cell.descriptionLabel.text = "With the same humor and humanity he exuded in 'An Inconvenient Truth,' Al Gore spells out 15 ways that individuals can address climate change immediately, from buying a hybrid to inventing a new, hotter brand name for global warming."
-           // cell.textLabel? = filteredData[indexPath.row].
+            cell.titleLabel.text = "Main Speaker: " + filteredData[indexPath.row].main_speaker
+            cell.descriptionLabel.text = filteredData[indexPath.row].description
             return cell
         }
         let cell = searchTable.dequeueReusableCell(withIdentifier: "searchCell",for: indexPath)
         cell.textLabel?.text = filteredTags[indexPath.row]
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       if tableView.tag == 1 {
-           
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "talk_detail") as? TalkDetailViewController
+        if tableView.tag == 1 {
+            let selectTag = filteredTags[indexPath.row]
+            filteredTags.append(selectTag)
             TalksTableView.reloadData()
+        }else{
+            vc?.talkTitle = filteredData[indexPath.row].title
+            vc?.videourl = filteredData[indexPath.row].url
+            vc?.views = filteredData[indexPath.row].views
+            vc?.date = filteredData[indexPath.row].published_date
+            vc?.speaker = filteredData[indexPath.row].main_speaker
+            vc?.talkDescription = filteredData[indexPath.row].description
+            vc?.tags = filteredData[indexPath.row].tags
+            self.navigationController?.pushViewController(vc!, animated: true)
         }
-        
-        
     }
 }
 
 extension ViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        
         filteredData = []
         filteredTags = []
+        
         if searchText == "" {
             filteredData = talks
             filteredTags = filteredData.flatMap({ $0.tags})
-            print(filteredTags)
         }
-        for word in talks {
-            for tag in word.tags{
+        for talk in talks {
+            for tag in talk.tags{
                 if tag.uppercased().contains(searchText.uppercased()){
-                    filteredData.append(word)
+                    let n = filteredData.map ({ $0.title })
+                        .filter({$0 == talk.title})
+                        .count
+                    if n == 0 {
+                        filteredData.append(talk)
+                    }
                     if !filteredTags.contains(tag){
                         filteredTags.append(tag)
                     }
-                    
                 }
             }
-            
         }
         self.searchTable.reloadData()
+        self.TalksTableView.reloadData()
     }
 }

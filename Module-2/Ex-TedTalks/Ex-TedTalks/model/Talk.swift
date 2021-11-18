@@ -23,5 +23,6 @@ struct Talk: Decodable {
     var tags: [String]
     var title: String
     var url: String
+    var views: Int
 }
 
